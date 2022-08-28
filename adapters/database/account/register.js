@@ -1,6 +1,8 @@
 const{accounts}=require('../models/index') ;//imported from an adapter ?
 const {sequelize,DataTypes,Op} = require('../../database/connection');
-
+//email.match(
+//     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+//   );
 /////change it to be by promise VIP//////////
 /////check if username and email does not exist ----DONE
 //// indication that it works -----DONE

@@ -5,7 +5,15 @@ const {
     register,
     updateUsername,
     updateEmail,
-    updatePassword
+    updatePassword,
+    listAccounts,
+    booking,
+    bookSeat,
+    unbook,
+    cancelSeatBooking,
+    insertAircraft,
+    notAdmin,
+    viewSeats
 } = require('../../../adapters/database/account/index')
 module.exports = {
     userExist,
@@ -13,5 +21,13 @@ module.exports = {
     register,
     updateUsername,
     updateEmail,
-    updatePassword
+    updatePassword,
+    listAccounts,
+    booking,
+    bookSeat,
+    unbook,
+    cancelSeatBooking,
+    insertAircraft,
+    notAdmin,viewSeats
+
 };

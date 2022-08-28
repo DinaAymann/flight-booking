@@ -1,5 +1,5 @@
 //////pass id by session
-const {updateUsername,updateEmail,updatePassword}=require('../../ports/adaptersport/database/portdatabase')
+const {updateUsername,updateEmail,updatePassword}=require('../../ports/adaptersport/database/portDatabase')
 async function changeUserName (name,id){
 if (await updateUsername(name,id))
     return true;

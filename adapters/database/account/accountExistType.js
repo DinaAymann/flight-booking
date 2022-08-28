@@ -8,7 +8,7 @@ const {sequelize,DataTypes,Op} = require('../../database/connection'); //should 
 
  async function userExist(username,password){   //should we use async and await
    /// let  result =
-       const result= await accounts.findOne({
+       return( await accounts.findOne({
            raw: true,
            attributes: ['id', 'type'],
          where: {
@@ -18,7 +18,7 @@ const {sequelize,DataTypes,Op} = require('../../database/connection'); //should 
                  {banned :'0'}
              ]
          }
-     });
+     }))
 
     //         .then(data => { return (data != null) ? true : false
     //
@@ -27,12 +27,13 @@ const {sequelize,DataTypes,Op} = require('../../database/connection'); //should 
      //        .then(count => {
      //     return (count >0) ? true : false
      // });
-     console.log("result");
- console.log(result);
-   if (result != null){
-    return result;}
+  //   console.log("result");
+ //console.log(result);
+ //   if (result != null){
+ //    return result;}
 
-   else return result;
+  // else
+  //      return result;
 
 }
 

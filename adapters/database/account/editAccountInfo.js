@@ -1,5 +1,7 @@
 const{accounts}= require('../models/account');
-const {sequelize,DataTypes,Op} = require('../../database/connection');
+const {sequelize,DataTypes,Op} = require('../../database/connection')
+
+
 async function updateUsername (username,id){
   let unique =  await accounts.findOne({
         where: {

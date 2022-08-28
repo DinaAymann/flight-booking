@@ -3,7 +3,11 @@ const { loginUseCase,
     changeEmail,
     changePassword,
     changeUserName,
-    ban
+    ban,
+    listAccountsUseCase,
+    bookUseCase,
+    cancelBooking,
+    addAircraft
 
 }= require('../../domian/account/index')
 module.exports = {
@@ -12,5 +16,9 @@ module.exports = {
     changeEmail,
     changePassword,
     changeUserName,
-    ban: ban
+    ban,
+    listAccountsUseCase,
+    bookUseCase,
+    cancelBooking,
+    addAircraft
 };

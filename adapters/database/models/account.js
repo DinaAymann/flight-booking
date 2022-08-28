@@ -1,4 +1,6 @@
-const {sequelize,DataTypes} = require('../connection')
+const {sequelize,DataTypes,Model} = require('../connection')
+const {flight,book,aircraft}=require('./index')
+const {Sequelize} = require("sequelize");
 
 const accounts = sequelize.define('accounts', {
     // Model attributes are defined here
@@ -40,7 +42,14 @@ const accounts = sequelize.define('accounts', {
     freezeTableName: true
     // Other model options go here
 });
-
-
+accounts.associations=models=>{
+    accounts.hasMany(models.aircraft)
+    accounts.belongsToMany(models.flight,{through: models.book})
+}
+// accounts.hasMany(book, {
+//     foreignKey: 'booked_by'
+// });
+//accounts.belongsToMany(flight,{through: book})
+//accounts.hasMany("aircraft");
 
 module.exports = {accounts};

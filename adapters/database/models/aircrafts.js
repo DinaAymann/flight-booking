@@ -2,7 +2,7 @@ const {sequelize, DataTypes, Op} = require('../connection')
 const {accounts, seats, flight} = require('./index')
 //const{seats}=require('./seats')
 /////a8yr el aircrafts w el seat no l unique -----------
-const Aircrafts = sequelize.define('aircrafts', {
+const aircraft = sequelize.define('aircraft', {
     // Model attributes are defined here
     id_account: {
         type: DataTypes.INTEGER,
@@ -29,10 +29,10 @@ const Aircrafts = sequelize.define('aircrafts', {
     tableName:"aircrafts"
     // Other model options go here
 });
-Aircrafts.associations = models => {
+aircraft.associations = models => {
 
     // aircrafts.belongsTo(models.accounts);
-    Aircrafts.hasMany(models.Seats, {
+    aircraft.hasMany(models.seats, {
             foreignKey: "id_aircraft",
 
         }
@@ -44,7 +44,7 @@ Aircrafts.associations = models => {
 
 }
 module.exports = {
-    Aircrafts
+    aircraft
 }
 
 //aircraft.hasMany(seats);

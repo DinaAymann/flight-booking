@@ -6,7 +6,7 @@ const {aircraft} = require('./index')
 //     mapToModel: true // pass true here if you have any mapped fields
 // });
 
-const Seats = sequelize.define('seats', {
+const seats = sequelize.define('seats', {
     // Model attributes are defined here
     id_s: {
         type: DataTypes.INTEGER,
@@ -39,13 +39,13 @@ const Seats = sequelize.define('seats', {
         freezeTableName: true,
         tableName:"seats"
     });
-Seats.associations = models => {
-    Seats.belongsTo(models.Aircrafts,{
+seats.associations = models => {
+    seats.belongsTo(models.Aircrafts,{
        as:"aircrafts_test",
        foreignKey:"id_aircraft"
    })
 }
 module.exports = {
 
-    Seats
+    seats
 }

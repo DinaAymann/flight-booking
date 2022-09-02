@@ -1,7 +1,7 @@
 const {loginUseCase,registerUseCase,changeEmail
     ,changePassword,changeUserName,ban,listAccountsUseCase,bookUseCase,cancelBooking
-,addAircraft,} = require('../../ports/domainports/account')
-const{viewSeats}=require('../../ports/adaptersport/database/portDatabase')
+,addAircraft,viewSeatsDomain} = require('../../ports/domainports/account')
+
 const express = require('express');
 
 
@@ -209,9 +209,11 @@ let result = await addAircraft(account, code)
 
 
 router.get('/viewSeats',async function (req, res) {
-
+    let id_flight =(req.query).id_flight;
+    let id_aircraft = req.query.id_aircraft;
+    let type= req.query.type
     // let search2 = search["search"];
-    res.send((await viewSeats()));
+    res.send((await viewSeatsDomain(id_flight,id_aircraft,type)));
 
 
 

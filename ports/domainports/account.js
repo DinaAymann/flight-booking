@@ -7,7 +7,8 @@ const { loginUseCase,
     listAccountsUseCase,
     bookUseCase,
     cancelBooking,
-    addAircraft
+    addAircraft,
+    viewSeatsDomain
 
 }= require('../../domian/account/index')
 module.exports = {
@@ -20,5 +21,6 @@ module.exports = {
     listAccountsUseCase,
     bookUseCase,
     cancelBooking,
-    addAircraft
+    addAircraft,
+    viewSeatsDomain
 };
